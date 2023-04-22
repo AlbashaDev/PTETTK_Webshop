@@ -92,9 +92,9 @@ function Success({ products }: Props) {
             </div>
             <div className="pt-3 text-sm">
               <p className="font-medium text-gray-600">
-                Other tracking number:
+                Use the unique order number below to track your order:
               </p>
-              <p>CNB21441622</p>
+              <p>#{session_id?.slice(-20)}</p>
             </div>
           </div>
 
@@ -139,7 +139,7 @@ function Success({ products }: Props) {
                 </button>
 
                 <p className="text-xl font-medium text-black">
-                  <Currency quantity={subtotal + 20} />
+                  <Currency quantity={subtotal + 0} />
                 </p>
               </div>
             </div>
@@ -178,7 +178,7 @@ function Success({ products }: Props) {
                   <div className="flex justify-between text-sm">
                     <p className="text-[gray]">Subtotal</p>
                     <p className="font-medium">
-                      <Currency quantity={subtotal} />
+                      <Currency quantity={subtotal} currency="HUF" />
                     </p>
                   </div>
                   <div className="flex justify-between text-sm">
@@ -188,16 +188,15 @@ function Success({ products }: Props) {
                   <div className="flex justify-between text-sm">
                     <p className="text-[gray]">Shipping</p>
                     <p className="font-medium">
-                      <Currency quantity={20} currency="HUF" />
+                      <Currency quantity={0} currency="HUF" />
                     </p>
                   </div>
                 </div>
                 <div className="flex justify-between pt-4">
                   <p>Total</p>
                   <p className="flex items-center gap-x-2 text-xs text-[gray]">
-                    Ft
                     <span className="text-xl font-medium text-black">
-                      <Currency quantity={subtotal + 20} />
+                      <Currency quantity={subtotal + 0} currency="HUF" />
                     </span>
                   </p>
                 </div>
