@@ -68,7 +68,8 @@ function Checkout() {
         <title>Bag - TTK</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
+      <Header products={[]} categories={[]} />
+      <main className="mx-auto max-w-5xl pb-24">
         <div className="px-5">
           <h1 className="my-4 text-3xl font-semibold lg:text-4xl">
             {items.length > 0 ? "Review your bag." : "Your bag is empty."}

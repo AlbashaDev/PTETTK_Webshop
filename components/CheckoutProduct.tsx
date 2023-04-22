@@ -1,10 +1,11 @@
+import { ChevronDownIcon } from "@heroicons/react/outline";
 import Image from "next/legacy/image";
 import { urlFor } from "../sanity";
-import { ChevronDownIcon } from "@heroicons/react/outline";
 import Currency from "react-currency-formatter";
-import { useDispatch } from "react-redux";
 import { removeFromBasket } from "../redux/basketSlice";
+import { useDispatch } from "react-redux";
 import toast from "react-hot-toast";
+
 interface Props {
   items: Product[];
   id: string;
@@ -37,11 +38,11 @@ function CheckoutProduct({ id, items }: Props) {
             <h4 className="font-semibold lg:w-96">{items[0].title}</h4>
             <p className="flex items-end gap-x-1 font-semibold">
               {items.length}
-              <ChevronDownIcon className="h-6 w-6 text-teal-700" />
+              <ChevronDownIcon className="h-6 w-6 text-blue-500" />
             </p>
           </div>
 
-          <p className="flex cursor-pointer items-end text-teal-700 hover:underline">
+          <p className="flex cursor-pointer items-end text-blue-500 hover:underline">
             Show product details
             <ChevronDownIcon className="h-6 w-6" />
           </p>
@@ -50,12 +51,12 @@ function CheckoutProduct({ id, items }: Props) {
           <h4 className="text-xl font-semibold lg:text-2xl">
             <Currency
               quantity={items.reduce((total, item) => total + item.price, 0)}
-              currency="HUF"
+              currency="USD"
             />
           </h4>
           <button
             onClick={removeItemFromBasket}
-            className="text-teal-700 hover:underline"
+            className="text-blue-500 hover:underline"
           >
             Remove
           </button>
@@ -64,4 +65,5 @@ function CheckoutProduct({ id, items }: Props) {
     </div>
   );
 }
+
 export default CheckoutProduct;
