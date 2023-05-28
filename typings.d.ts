@@ -31,7 +31,15 @@ interface Product {
     _type: "slug";
     current: string;
   };
-  description: string;
+  description: [
+    {
+      children: [
+        {
+          text: String;
+        }
+      ];
+    }
+  ];
   category: {
     _type: "reference";
     _ref: string;
